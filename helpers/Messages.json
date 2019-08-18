@@ -1,0 +1,30 @@
+[
+    {
+        "encoding": '11000000',
+        "type": 'Traffic control sign',
+        "subType": 'Stop sign detected',
+        "voiceMessage": "Stop sign detected",
+        "image": 'stopSign'
+    },
+    {
+        "encoding": '11000001',
+        "type": 'Traffic control sign',
+        "subType": 'Yield sign detected',
+        "voiceMessage": "Yield sign detected",
+        "image": 'yieldSign'
+    },
+    {
+        "encoding": '11010001',
+        "type": 'Traffic prohibition sign',
+        "subType": '40kmh speed limit sign detected',
+        "voiceMessage": "40 speed limit sign detected",
+        "image": 'fortySign'
+    },
+    {
+        "encoding": '00000011',
+        "type": 'System control',
+        "voiceMessage": "Disconnected from the server",
+        "subType": 'Server disconnect',
+        "image": 'fortySign'
+    },
+]
