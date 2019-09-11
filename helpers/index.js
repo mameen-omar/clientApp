@@ -23,6 +23,7 @@ export const setListOfAvailableDevices = (setAvailableDevices) => {
 export const connectToSelectedDevice = (props) => {
     if (props.selectedDevice) {  
         props.setConnectButtonTitle(`connecting...`)
+        TTS.setDefaultRate(1);
         BT.connect(props.selectedDevice.id).then((res) => {
           if ( res ) {
               performHandshake()
@@ -66,6 +67,7 @@ const processMessage = (encoding, setMessage, setMessageImage) => {
     if (messageObject) {
       setMessage(messageObject.voiceMessage)
       setMessageImage(messageObject.image)
-      TTS.speak(`My Berg, ${messageObject.voiceMessage}`)
+      TTS.stop()
+      TTS.speak(`${messageObject.voiceMessage}`)
     } 
 }

@@ -18,6 +18,6 @@ export const Dashboard = (props) =>
 const Header = () => 
   <View style={styles.headerContainer}>
     <View style={styles.headerTitle}>
-      <Text style={styles.headerTitleText} >Road Side Sign Recognition</Text>
+      <Text style={styles.headerTitleText} >Traffic Sign and Light Recognition</Text>
     </View>
   </View>
