@@ -23,7 +23,8 @@ export const setListOfAvailableDevices = (setAvailableDevices) => {
 export const connectToSelectedDevice = (props) => {
     if (props.selectedDevice) {  
         props.setConnectButtonTitle(`connecting...`)
-        TTS.setDefaultRate(1);
+        TTS.setDefaultRate(1.5);      
+        TTS.setDefaultPitch(100);   
         BT.connect(props.selectedDevice.id).then((res) => {
           if ( res ) {
               performHandshake()
@@ -66,8 +67,8 @@ const processMessage = (encoding, setMessage, setMessageImage) => {
     )
     if (messageObject) {
       setMessage(messageObject.voiceMessage)
-      setMessageImage(messageObject.image)
-      TTS.stop()
+      setMessageImage(messageObject.image)    
+    //   TTS.stop()
       TTS.speak(`${messageObject.voiceMessage}`)
     } 
 }
