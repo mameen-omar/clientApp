@@ -15,7 +15,10 @@ import {
 const Images = {
     stopSign: require('../../assets/images/Stop_sign(standard).png'),
     yieldSign: require('../../assets/images/yield.png'),
-    fortySign: require('../../assets/images/40.png') 
+    fortySign: require('../../assets/images/speed.png'),
+    redLight: require('../../assets/images/red.svg.png'),
+    yellowLight: require('../../assets/images/yello2.png'),
+    greenLight: require('../../assets/images/green.svg.png') 
   }  
 
 export const SignRecognition = (props) =>

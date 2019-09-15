@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "react": "16.8.6",
-    "react-native": "0.60.0",
+    "react-native": "0.60.5",
     "react-native-bluetooth-serial": "^1.0.0-rc1",
     "react-native-tts": "^3.0.0"
   },

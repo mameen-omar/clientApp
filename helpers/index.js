@@ -23,8 +23,8 @@ export const setListOfAvailableDevices = (setAvailableDevices) => {
 export const connectToSelectedDevice = (props) => {
     if (props.selectedDevice) {  
         props.setConnectButtonTitle(`connecting...`)
-        TTS.setDefaultRate(1.5);      
-        TTS.setDefaultPitch(100);   
+        TTS.setDefaultRate(1.0);      
+        TTS.setDefaultPitch(200);   
         BT.connect(props.selectedDevice.id).then((res) => {
           if ( res ) {
               performHandshake()
@@ -49,6 +49,7 @@ export const setupListener = (setConnectedToDevice, setConnectButtonTitle, setMe
           } else if (data.data === '00000011\r') {
               setConnectButtonTitle('Not connected - Please select an available device...')
               setConnectedToDevice(false)
+              TTS.stop()
               TTS.speak('Disconnected from the server')
           } else if (data.data.length > 1) {
             processMessage(data.data, setMessage, setMessageImage)
@@ -68,7 +69,7 @@ const processMessage = (encoding, setMessage, setMessageImage) => {
     if (messageObject) {
       setMessage(messageObject.voiceMessage)
       setMessageImage(messageObject.image)    
-    //   TTS.stop()
+      TTS.stop()
       TTS.speak(`${messageObject.voiceMessage}`)
     } 
 }
